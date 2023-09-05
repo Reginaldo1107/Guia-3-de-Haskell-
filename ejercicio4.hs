@@ -28,5 +28,37 @@ sumaTerna:: (Int , Int , Int) -> Int
 sumaTerna (x,y,z) = x + y + z
 
 
+--e) sumarSoloMultiplos: dada una terna de numeros 
+--enteros y un natural, calcula la suma de los 
+--elementos de la terna que son multiplos del 
+--numero natural. Por ejemplo:
+--son multiplos del numero natural. Por ejemplo:
+--sumarSoloMultiplos (10,-8,-5) 2 -> 2
+--sumarSoloMultiplos (66,21,4) 5 -> 0
+--sumarSoloMultiplos (-30,2,12) 3 -> -18
+
+sumarSoloMultiplos:: (Int , Int , Int) -> Int -> Int 
+sumarSoloMultiplos (x , y ,z)  v | (mod x v == 0) && (mod y v == 0) && (mod z v == 0) = x + y + z
+                                 | (mod x v /= 0) && (mod y v == 0) && (mod z v == 0) =  y + z
+                                 | (mod x v == 0) && (mod y v /= 0) && (mod z v == 0) = x + z
+                                 | (mod x v == 0) && (mod y v == 0) && (mod z v /= 0) = x + y 
+                                 | (mod x v == 0) && (mod y v /= 0) && (mod z v /= 0) =  x
+                                 | (mod x v /= 0) && (mod y v == 0) && (mod z v /= 0) =  y
+                                 | (mod x v /= 0) && (mod y v /= 0) && (mod z v == 0) =  z
+                                 | otherwise = 0
+                                  
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

@@ -49,9 +49,28 @@ sumarSoloMultiplos (x , y ,z)  v | (mod x v == 0) && (mod y v == 0) && (mod z v 
                                   
 
 
+-- f )posPrimerPar: dada una terna de enteros, devuelve 
+--la posición del primer número par si es que hay alguno,
+-- y devuelve 4 si son todos impares.
+posPrimerPar:: (Integer , Integer , Integer) -> Integer
+posPrimerPar (x ,y ,z)  | mod x 2 == 0 = 1
+                        | mod y 2 == 0 = 2
+                        | mod z 2 == 0 = 3
+                        |otherwise = 4
 
+--g) crearPar :: a ->b ->(a, b):
+-- crea un par a partir de sus dos componentes
+-- dadas por separado (debe funcionar para
+-- elementos de cualquier tipo).
+crearPar :: Float  ->Float -> (Float , Float)
+crearPar x y = (x, y)
 
-
+--h) invertir :: (a, b) ->(b, a):
+-- invierte los elementos del par pasado como
+-- parámetro (debe funcionar para elementos
+--de cualquier tipo).
+invertir :: (Float, Float) ->(Float, Float)
+invertir (x, y) = (y ,x)
 
 
 
